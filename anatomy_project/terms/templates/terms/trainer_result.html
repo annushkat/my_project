@@ -1,0 +1,24 @@
+{% extends "terms/base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body text-center">
+        <h3 class="card-title">
+            {% if is_correct %}
+                ✅ Ну хорошо...
+            {% else %}
+                ❌ Неверно. Захотелось побывать на отработке?
+            {% endif %}
+        </h3>
+        
+        <div class="my-4">
+            <p class="fs-4">{{ term.russian }} → {{ term.latin }}</p>
+            {% if not is_correct %}
+                <p class="text-danger">Ваш ответ: {{ user_answer }}</p>
+            {% endif %}
+        </div>
+
+        <a href="{% url 'trainer' %}" class="btn btn-dark">Следующий термин</a>
+    </div>
+</div>
+{% endblock %}

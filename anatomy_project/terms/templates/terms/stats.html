@@ -1,0 +1,30 @@
+{% extends "terms/base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2>Статистика</h2>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Общее количество терминов</h5>
+                        <p class="display-4">{{ total_terms }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Последний добавленный термин</h5>
+                        <p class="fs-4">
+                            {{ latest_term.russian }}<br>
+                            <small class="text-muted">{{ latest_term.latin }}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

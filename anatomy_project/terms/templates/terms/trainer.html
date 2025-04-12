@@ -1,0 +1,22 @@
+{% extends "terms/base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Переведите термин:</h3>
+        <h2 class="display-6 my-4">{{ term.russian }}</h2>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="hidden" name="term_id" value="{{ term.id }}">
+                <input type="text" 
+                       class="form-control form-control-lg" 
+                       name="latin" 
+                       placeholder="Введите латинский вариант"
+                       required>
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg">Проверить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "terms/base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать в тренажёр анатомических терминов!</h1>
+    <p class="lead mt-3">Изучайте латинские названия анатомических структур с помощью тестов</p>
+    <div class="mt-5">
+        <a href="{% url 'terms_list' %}" class="btn btn-dark btn-lg">К списку терминов</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "terms/base.html" %}
+
+{% block content %}
+<h2>Все термины</h2>
+<table class="table table-striped mt-4">
+    <thead>
+        <tr>
+            <th>Русский</th>
+            <th>Латинский</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for term in terms %}
+        <tr>
+            <td>{{ term.russian }}</td>
+            <td>{{ term.latin }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">Пока нет терминов. Добавьте первый!</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'add_term' %}" class="btn btn-dark">Добавить новый термин</a>
+{% endblock %}
