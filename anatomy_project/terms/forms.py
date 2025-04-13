@@ -29,26 +29,3 @@ class TermForm(forms.ModelForm):
             'russian': forms.TextInput(attrs={'class': 'form-control'}),
             'latin': forms.TextInput(attrs={'class': 'form-control'}),
         }
-
-    # def clean(self):
-    #     """Кастомная валидация данных формы.
-        
-    #     Проверяет:
-    #     - Что оба поля заполнены
-    #     - Что термин с таким русским названием ещё не существует
-        
-    #     Raises:
-    #         forms.ValidationError: Если проверки не пройдены.
-    #     """
-    #     cleaned_data = super().clean()
-    #     russian = cleaned_data.get('russian')
-    #     latin = cleaned_data.get('latin')
-        
-    #     if not russian or not latin:
-    #         raise forms.ValidationError("Оба поля должны быть заполнены!")
-        
-    #     if Term.objects.filter(russian=russian).exists():
-    #         raise forms.ValidationError("Этот русский термин уже существует!")
-        
-    #     return cleaned_data
-    
